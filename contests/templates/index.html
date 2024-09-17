@@ -6,10 +6,20 @@
     <title>Конкурс</title>
     {% load static %} 
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
     <form action="{% url 'con' %}" method="post">
         {% csrf_token %}
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
         {{ name.as_p }}
         <button type="submit">Отправить</button>
     </form>
