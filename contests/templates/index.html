@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Конкурс</title>
     {% load static %} 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
@@ -19,8 +19,9 @@
                 </div>
             {% endfor %}
         {% endif %}
-        
         {{ name.as_p }}
+
+        {{ username.as_p }} <!-- Updated to use form object -->
         <button type="submit">Отправить</button>
     </form>
 </body>

@@ -7,8 +7,9 @@ def con(request):
     if request.method == 'POST':
         form = ConformCreateForm(request.POST)
         if form.is_valid():
-            input_text = form.cleaned_data['name']
-            con = Conform.objects.create(name=input_text)
+            input_name = form.cleaned_data['name']
+            input_username = form.cleaned_data['username']
+            con = Conform.objects.create(name=input_name, username=input_username)
             con.save()
             messages.success(request, 'Данные успешно отправлены!')
             return redirect('con')  # Перенаправление для предотвращения повторной отправки формы

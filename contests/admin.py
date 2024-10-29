@@ -3,4 +3,4 @@ from .models import Conform
 
 @admin.register(Conform)
 class ConformAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'username']

@@ -39,6 +39,12 @@ input[type="text"] {
     box-sizing: border-box; /* Учитываем границы и отступы в ширине */
 }
 
+input[type="text"]:focus {
+    border-color: #7a4caf;
+    outline: none;
+}
+
+
 /* Стиль для кнопки */
 button {
     width: 100%;
